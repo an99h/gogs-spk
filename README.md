@@ -1,4 +1,4 @@
-#猫盘群晖上gogs的编译
+# 猫盘群晖上gogs的编译
 ## MAC OS 安装 go
 ```
 $ brew install go
