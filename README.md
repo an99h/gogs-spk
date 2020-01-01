@@ -16,6 +16,19 @@ $ go_build_linux
 克隆本工程，将之前生成的 gogs 二进制文件和public/scripts/templates 三个文件夹一起拷贝到`1_create_package/gogs`
 再执行 `./create_spk.sh`即可得到 gogs.spk
 
+## 猫盘群晖上安装 gogs.spk
+1. 安装git server 、MariaDB5(设置密码)
+2. 手动安装 gogs.spk
+3. 执行 gogs mysql.sql
+	 
+	 ```
+	 $ cd /usr/local/gogs/gogs/scripts  
+	 $ mysql -uroot -p密码  
+	 MariaDB> source mysql.sql  
+	 ```
+4. 在套件中心打开 gogs 开始配置，数据库选择 mysql
+
+---
 ---
 ---
 ---
