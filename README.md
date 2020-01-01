@@ -1,3 +1,26 @@
+#猫盘群晖上gogs的编译
+## MAC OS 安装 go
+```
+$ brew install go
+```
+
+## 编译猫盘群晖 gogs
+```
+$ git clone --depth 1 https://github.com/gogs/gogs.git
+$ alias go_build_linux="GOOS=linux GOARCH=arm GOARM=7 go build"
+$ go_build_linux
+```
+运行完即可在 gogs 目录下得到 gogs 二进制文件
+
+## 打包群晖上的spk套件 
+克隆本工程，将之前生成的 gogs 二进制文件和public/scripts/templates 三个文件夹一起拷贝到`1_create_package/gogs`
+再执行 `./create_spk.sh`即可得到 gogs.spk
+
+---
+---
+---
+
+
 # gogs-spk
 
 [Gogs](https://gogs.io) (Go Git Service) SPK package ([Synology PacKages](https://www.synology.com/en-us/dsm/app_packages))
@@ -57,3 +80,5 @@ https://github.com/gogits/gogs
 - Don't force to use Git Server and MariaDB (PostgreSQL? Gogs ARM version haven't Sqlite/TiDB)
 - Support to archs (and DBs)
 - Don't use **root** user and create and use **gogs** user, if possible
+
+
